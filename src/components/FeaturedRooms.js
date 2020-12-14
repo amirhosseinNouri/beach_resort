@@ -9,15 +9,15 @@ export default class FeaturedRooms extends Component {
   render() {
     let { loading, featuredRooms: rooms } = this.context;
 
-    rooms = rooms.map((room) =>{
-        return <Room key={room.id} room={room}></Room>
-    })
+    rooms = rooms.map((room) => {
+      return <Room key={room.id} room={room}></Room>;
+    });
     return (
-      <section className="featuredRooms">
-          <Title title="featured rooms"></Title>
-          <div className="featured-rooms-center">
-              {loading ? <Loading></Loading> : rooms}
-          </div>
+      <section className="featured-rooms">
+        <Title title="featured rooms"></Title>
+        <div className="featured-rooms-center">
+          {loading ? <Loading></Loading> : rooms}
+        </div>
       </section>
     );
   }
