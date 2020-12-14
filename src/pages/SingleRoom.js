@@ -44,9 +44,11 @@ export default class SingleRoom extends Component {
       images,
     } = room;
 
+    const [firstImage , ...otherImages] = images
+
     return (
       <>
-        <StyledHero img={images[0] || this.state.defaultBck}>
+        <StyledHero img={firstImage || this.state.defaultBck}>
           <Banner title={`${name} room`}>
             <Link to="/rooms" className="btn-primary">
               Back to rooms
@@ -55,8 +57,8 @@ export default class SingleRoom extends Component {
         </StyledHero>
         <section className="single-room">
           <div className="single-room-images">
-            {images.map((item, index) => {
-              if (index !== 0)
+            {otherImages.map((item, index) => {
+              
                 return <img key={index} src={item} alt={name}></img>;
             })}
           </div>
