@@ -24,7 +24,7 @@ export default class SingleRoom extends Component {
     if (!room) {
       return (
         <div className="error">
-          <h3>no suck room could be found...</h3>
+          <h3>no such room could be found...</h3>
           <Link to="/rooms" className="btn-primary">
             Back to room
           </Link>
